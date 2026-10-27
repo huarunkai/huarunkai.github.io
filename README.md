@@ -1,34 +1,28 @@
-# 华润凯的学术主页
+# Runkai Hua 学术主页
 
-适用于 `https://huarunkai.github.io/` 的静态网页。原生 HTML、CSS 和 JavaScript，无构建步骤，无第三方脚本和运行时依赖。
+地址：https://huarunkai.github.io/
+
+这是一个无需构建步骤的静态学术主页。当前排版根据本人要求，参考 [Qianhui Wu 的主页](https://qianhuiwu.github.io/)：白底、左侧圆形头像与个人信息、右侧紧凑正文、News 和按研究方向折叠的论文列表。HTML、CSS 和交互代码独立编写，个人文字、照片与论文信息均为华润凯本人的资料；未引入参考站点的跟踪脚本。
 
 ## 文件
 
-- `index.html`：个人介绍、论文状态、实习经历、开源项目、教育与荣誉。
-- `styles.css`：暖白与深青绿色的编辑式版面，包含移动端和打印适配。
-- `script.js`：中英文切换、语言偏好记忆、当前章节提示。
-- `favicon.svg`：RH 字母图标。
-- `share.svg`：网页分享图。
-- `.nojekyll`：直接托管静态文件。
+- `index.html`：个人介绍、新闻、项目、论文、经历、教育与荣誉。
+- `styles.css`：桌面与手机样式。
+- `script.js`：中英文切换、语言偏好保存、打印时展开论文分组。
+- `images/portrait.jpg`：本人头像，来自提供的简历。
+- `favicon.svg`、`share.png`、`share.svg`：站点图标与分享图片。
+- `.nojekyll`：让 GitHub Pages 直接发布静态文件。
 
-## 更新内容
+## 修改内容
 
-可直接编辑 `index.html`。带 `data-en` 与 `data-zh` 的元素分别存放英文、中文；默认正文保持英文，与 `data-en` 同步修改。论文完整标题保留原文。新增论文时，应明确区分已发表、投稿中、在审和修改阶段，再补入已公开的真实链接。
+双语文字以 `data-en` 与 `data-zh` 保存在对应元素上。更新文字时，请同时修改这两个属性和元素默认的英文正文。链接地址写在 `href` 中。英文论文标题保持原题；论文状态必须继续区分已发表、投稿与在审。
 
-`styles.css` 的 `:root` 集中定义颜色与字体。网站使用设备内置字体，未加载远程字体。默认英文，可在右上角切换中文；禁用 JavaScript 时英文正文和导航依然可用。
+论文使用原生 `details` / `summary`，默认展开，点击研究方向标题可收起。无需 JavaScript 也可以操作。手机端直接展示 Email 和 GitHub。
 
-## GitHub Pages
+## 发布
 
-将这些文件放在 `huarunkai/huarunkai.github.io` 仓库根目录，在仓库 Settings → Pages 中选择从 `main` 分支的 `/ (root)` 发布。首次部署可能需要几分钟。
+将修改提交到 `huarunkai/huarunkai.github.io` 的 `main` 分支，GitHub Pages 从根目录自动发布。此版本的 HTML 使用 `academic-reference-v2` 标识，并给 CSS / JavaScript 添加版本查询参数，以减少浏览器缓存旧样式。
 
-网页只包含公开展示所需的个人介绍，不附完整简历或手机号。联系邮箱沿用原简历。
+## 内容依据
 
-## 设计参考
-
-信息组织参考了常见学术主页的「个人简介、研究、经历」结构，可对照：
-
-- Academic Pages：<https://github.com/academicpages/academicpages.github.io>
-- al-folio：<https://github.com/alshedivat/al-folio>
-- Minimal Light：<https://minimal-light-theme.yliu.me/>
-
-本页为独立编写的静态实现，未复制上述模板源代码、图像或他人的个人资料。
+教育、经历与研究信息以本人提供的简历为基础。TADUFMA 正式论文链接为 https://doi.org/10.1088/1361-6501/adf083 。其他稿件没有虚构公开全文链接、完整作者名单或录用信息。
